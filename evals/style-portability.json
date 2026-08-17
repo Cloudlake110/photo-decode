@@ -1,0 +1,26 @@
+{
+  "skill": "photo-decode",
+  "version": "1.0.1",
+  "cases": [
+    {
+      "id": "style-portability-fresh-session",
+      "input_type": "all",
+      "must": [
+        "flat does not collapse into generic SVG/vector minimalism",
+        "key elements are miniature fragments from right visual",
+        "no uniform icon family",
+        "no line-icon or pictogram treatment",
+        "source-specific internal detail may remain when identity-defining"
+      ]
+    },
+    {
+      "id": "key-elements-complex-source",
+      "input_type": "architecture/artwork/product",
+      "must": [
+        "key elements preserve natural silhouette and proportion",
+        "key elements preserve source-specific ornament/pattern when retained in right visual",
+        "different key elements may have different levels of detail"
+      ]
+    }
+  ]
+}

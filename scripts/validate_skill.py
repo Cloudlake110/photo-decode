@@ -16,8 +16,11 @@ required = [
     "references/scene-routing.md",
     "references/quality-gates.md",
     "references/prompt-template.md",
+    "references/style-lock.md",
     "evals/evals.json",
+    "evals/style-portability.json",
     "assets/layout-spec.svg",
+    "assets/golden-key-elements-reference.png",
 ]
 missing = [p for p in required if not (ROOT / p).exists()]
 if missing:

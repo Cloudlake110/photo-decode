@@ -14,10 +14,13 @@ Run before every final render.
 ## Gate B — Right visual transformation (hard)
 
 - [ ] It is clearly not a copy/filter of the source
-- [ ] Complex detail is compressed
+- [ ] Complex detail is compressed **selectively**, not erased indiscriminately
 - [ ] Photographic/painterly background is removed
 - [ ] Form is visibly flatter and more graphic
 - [ ] Main subject/relationship remains recognizable
+- [ ] Source-specific ornament, line hierarchy, pattern, asymmetry, or structural detail is retained when identity-defining
+- [ ] The result reads as premium editorial illustration / museum design study
+- [ ] It does **not** read as generic SVG/vector art, corporate infographic, logo treatment, or UI illustration
 - [ ] Hierarchy is preserved or deliberately clarified
 - [ ] No unsupported generic circles/blobs/arches/waves/grids
 
@@ -29,12 +32,17 @@ Run before every final render.
 - [ ] Board paper color is excluded unless part of the right visual
 - [ ] Removed source colors have not leaked back into the palette without justification
 
-## Gate D — Key-element dependency (hard)
+## Gate D — Key-element dependency and style (hard)
 
 - [ ] 4–6 elements
 - [ ] Every element exists in the right visual
+- [ ] Each element looks like an isolated miniature fragment of the right visual
+- [ ] Natural silhouette/proportion of each fragment is preserved
+- [ ] Rendering character, internal detail, line hierarchy and palette match the right visual
+- [ ] Elements are **not** normalized into a uniform icon family
+- [ ] No SVG/UI icon aesthetic
+- [ ] No line-icon system, pictogram family, logo family, emoji-like set, or generic symbol library
 - [ ] No removed background/context element appears
-- [ ] Same flat style and palette as the right visual
 - [ ] No element was added solely because it existed in the original source
 
 ## Gate E — Text truthfulness (hard)
@@ -52,8 +60,8 @@ Run before every final render.
 - [ ] Consistent block-title typography
 - [ ] Strong before/after balance
 - [ ] Legible HEX labels
-- [ ] Key-element labels do not crowd icons
-- [ ] No UI-dashboard, scrapbook, or slide-deck look
+- [ ] Key-element labels do not crowd the visual fragments
+- [ ] No UI-dashboard, scrapbook, slide-deck, or corporate-infographic look
 
 ## Scene-specific extra gates
 

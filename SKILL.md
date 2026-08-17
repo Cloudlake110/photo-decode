@@ -33,13 +33,21 @@ It must follow this sequence:
 
 The result must feel visibly new while remaining traceable to the source.
 
+### Flat does **not** mean generic vector minimalism
+
+`FLAT` describes the removal of photographic depth/background and the compression of information. It does **not** require SVG-like simplification, UI-icon aesthetics, logo geometry, uniform stroke weights, or pictogram minimalism.
+
+For information-rich sources, the reinterpreted visual may remain visually rich. Preserve selective ornament, internal pattern, line hierarchy, texture cues, asymmetry, and source-specific structural detail whenever those features carry identity. Compression is **selective**, not radical minimalization.
+
+The target visual language is a **premium editorial illustration / museum design study**, not a generic vector infographic.
+
 ### Right panel must
 
 - identify the visual/narrative anchor first;
 - preserve the minimum identity-defining shapes and relationships needed for recognition;
 - remove incidental environment, clutter, photographic depth, texture noise, realistic lighting, reflections, and non-essential secondary objects;
 - compress three-dimensional volume into a two-dimensional graphic language;
-- use clean silhouettes, flat color planes, simplified internal structure, controlled line rhythm, and restrained tonal separation;
+- use clean silhouettes and flat color planes while retaining selected source-specific internal details, ornamental rhythms, contour breaks, and material cues when they are identity-defining;
 - preserve important left/right, top/bottom, scale, direction, overlap, repetition, and hierarchy relationships when they are identity-defining;
 - create strong visual impact through simplification, not through invented decoration;
 - contain **no unsupported circles, arches, waves, blobs, grids, suns, dots, or ornamental geometry** unless that form is traceable to the retained subject structure.
@@ -105,12 +113,16 @@ If a source color was removed during reinterpretation, it must not reappear mere
 
 **Critical dependency:** derive the key elements from **REINTERPRETED VISUAL (FLAT)** only — never directly from ORIGINAL SOURCE.
 
-- show 4–6 simplified icon-like/glyph-like elements;
-- use the same flat visual language and palette as the right visual;
+- show 4–6 **isolated miniature visual fragments** taken from the design language of the right visual;
+- each item should look like a carefully extracted/recomposed piece of `REINTERPRETED VISUAL (FLAT)`, not a separately designed icon;
+- preserve source-specific silhouette, proportion, line hierarchy, ornamental detail, internal pattern, and color relationships when relevant;
+- elements may be miniature figures, architectural fragments, garment contours, motifs, structural modules, gestures, or object parts; they do **not** need to share one icon shape or one stroke weight;
+- use the same rendering character and palette as the right visual;
 - each element must correspond to a retained component in the right visual;
 - do not include any background element that was removed;
 - do not introduce a new object just because it was visible in the original source;
-- use concise labels under the elements when labels improve clarity.
+- use concise labels under the elements when labels improve clarity;
+- **never convert KEY ELEMENTS into an SVG/UI icon set, line-icon system, pictogram family, logo family, emoji-like set, or generic symbol library.**
 
 ## Fixed editorial layout
 
@@ -179,6 +191,7 @@ Do not present the result as final if any of these are true:
 - `references/scene-routing.md` — rules by image type
 - `references/quality-gates.md` — preflight and final validation
 - `references/prompt-template.md` — image generation prompt compiler
+- `references/style-lock.md` — portability rules that prevent SVG/icon drift across fresh sessions
 
 ## Output behavior
 
