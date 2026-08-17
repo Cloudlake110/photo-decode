@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#F2EFE7"/>
+  <g fill="none" stroke="#AAA79F" stroke-width="2">
+    <rect x="50" y="50" width="530" height="430"/>
+    <rect x="620" y="50" width="530" height="430"/>
+    <rect x="50" y="520" width="420" height="230"/>
+    <rect x="500" y="520" width="300" height="230"/>
+    <rect x="830" y="520" width="320" height="230"/>
+  </g>
+  <g fill="#2B2B29" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    <text x="70" y="85">1. ORIGINAL SOURCE</text>
+    <text x="640" y="85">2. REINTERPRETED VISUAL (FLAT)</text>
+    <text x="70" y="555">3. IMAGE ESSENCE</text>
+    <text x="520" y="555">4. COLOR PALETTE</text>
+    <text x="850" y="555">5. KEY ELEMENTS</text>
+  </g>
+  <g fill="#77736B" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    <text x="70" y="120">faithful source</text>
+    <text x="640" y="120">extract → compress → remove background → flatten</text>
+    <text x="70" y="590">title + short editorial reading</text>
+    <text x="520" y="590">derived from block 2 + HEX</text>
+    <text x="850" y="590">derived from block 2</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+请接管当前 Photo Decode v1.0.0 发布任务。
+
+先完整阅读本目录中的 `DEPLOY_WITH_CODEX.md`，然后严格按里面的步骤执行。
+
+目标仓库：
+https://github.com/Cloudlake110/photo-decode
+
+要求：
+- 不修改 Photo Decode 已锁定的五区块规范和核心视觉转换逻辑。
+- 必须运行两次 `python3 scripts/validate_skill.py`，都通过才允许 push。
+- 用本目录完整源码树替换 GitHub 当前的手机临时上传结构。
+- 删除 `UPLOAD-INSTRUCTIONS.txt`、`photo-decode-mobile-upload.zip`、`PHOTO-DECODE-SHOWCASE.png` 等临时文件。
+- 保留并上传 `references/`、`evals/`、`agents/`、`assets/`、`scripts/`、`examples/`。
+- `examples/gallery/` 只保留本包内的 5 张精选稳定案例。
+- commit message 使用：
+  feat: publish complete Photo Decode v1.0.0 repository
+- push 到 main。
+- 如果 gh CLI 可用，再创建 tag `v1.0.0` 和 GitHub Release，Release 正文使用 `RELEASE_NOTES.md`；如果 gh 不可用，不要因此阻塞主仓库同步。
+- 最后向我报告 commit SHA、校验结果和 GitHub 页面检查结果。

@@ -50,17 +50,19 @@ COLOR PALETTE + KEY ELEMENTS
 
 ## Selected examples
 
-![Photo Decode selected stability tests](PHOTO-DECODE-SHOWCASE.png)
+| Portrait | Saturated landscape |
+|---|---|
+| ![Portrait](examples/gallery/06-portrait.png) | ![Landscape](examples/gallery/04-saturated-landscape.png) |
 
-The first public mobile upload uses one contact sheet containing the five latest stable test categories:
+| Complex news | Group portrait |
+|---|---|
+| ![Complex news](examples/gallery/05-complex-news-scene.png) | ![Group portrait](examples/gallery/07-group-portrait.png) |
 
-- portrait
-- saturated landscape
-- complex news/documentary scene
-- group portrait
-- retail / product display
+### Retail / product display
 
-The complete package is also provided as `photo-decode-v1.0.0-full.zip`.
+![Retail display](examples/gallery/08-retail-display.png)
+
+See [`examples/README.md`](examples/README.md) for what each example validates.
 
 ## Supported inputs
 

@@ -15,4 +15,4 @@ Because the project was developed with awareness of an upstream non-commercial w
 
 ## Test images
 
-Development used many user-supplied and reference images to test behavior across portraits, news, artworks, landscapes, groups, architecture, and product displays. Those source images and generated boards are intentionally **not included** in this repository unless their redistribution rights are separately confirmed.
+Development used user-supplied and reference images to test behavior across portraits, news, artworks, landscapes, groups, architecture, and product displays. This repository includes a small selected gallery of generated boards for demonstration. Each board may embed its source image in `ORIGINAL SOURCE`; source-material redistribution rights remain separate and must be checked independently.
