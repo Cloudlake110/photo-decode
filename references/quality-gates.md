@@ -1,81 +1,66 @@
-# Quality Gates
+# Photo Decode V2 Quality Gates
 
-Run before every final render.
+All HARD gates must pass.
 
-## Gate A — Five-block integrity (hard)
+## Gate 1 — Five-block contract [HARD]
 
-- [ ] 1. ORIGINAL SOURCE present
-- [ ] 2. REINTERPRETED VISUAL (FLAT) present
-- [ ] 3. IMAGE ESSENCE present
-- [ ] 4. COLOR PALETTE present
-- [ ] 5. KEY ELEMENTS present
-- [ ] No sixth analysis block added
+- [ ] Exact labels 1–5 are present.
+- [ ] No sixth analysis block.
+- [ ] Palette is center-bottom; KEY ELEMENTS right-bottom.
 
-## Gate B — Right visual transformation (hard)
+## Gate 2 — Analysis integrity [HARD]
 
-- [ ] It is clearly not a copy/filter of the source
-- [ ] Complex detail is compressed **selectively**, not erased indiscriminately
-- [ ] Photographic/painterly background is removed
-- [ ] Form is visibly flatter and more graphic
-- [ ] Main subject/relationship remains recognizable
-- [ ] Source-specific ornament, line hierarchy, pattern, asymmetry, or structural detail is retained when identity-defining
-- [ ] The result reads as premium editorial illustration / museum design study
-- [ ] It does **not** read as generic SVG/vector art, corporate infographic, logo treatment, or UI illustration
-- [ ] Hierarchy is preserved or deliberately clarified
-- [ ] No unsupported generic circles/blobs/arches/waves/grids
+- [ ] A clear anchor/hierarchy exists.
+- [ ] Keep/delete choices are evident in the reconstruction.
+- [ ] Important spatial/action relations survive.
 
-## Gate C — Palette dependency (hard)
+## Gate 3 — Anti-filter / style diversity [HARD]
 
-- [ ] Palette comes from right visual only
-- [ ] 5–8 swatches
-- [ ] Every swatch has a readable HEX code
-- [ ] Board paper color is excluded unless part of the right visual
-- [ ] Removed source colors have not leaked back into the palette without justification
+- [ ] Block 2 is not a named-style filter.
+- [ ] No default engraving, etching, woodcut, linocut, comic, anime or universal vector look.
+- [ ] Surface treatment is source-adaptive.
+- [ ] An unrelated source would not obviously receive the same medium/texture treatment.
 
-## Gate D — Key-element dependency and style (hard)
+## Gate 4 — Reconstruction quality [HARD]
 
-- [ ] 4–6 elements
-- [ ] Every element exists in the right visual
-- [ ] Each element looks like an isolated miniature fragment of the right visual
-- [ ] Natural silhouette/proportion of each fragment is preserved
-- [ ] Rendering character, internal detail, line hierarchy and palette match the right visual
-- [ ] Elements are **not** normalized into a uniform icon family
-- [ ] No SVG/UI icon aesthetic
-- [ ] No line-icon system, pictogram family, logo family, emoji-like set, or generic symbol library
-- [ ] No removed background/context element appears
-- [ ] No element was added solely because it existed in the original source
+- [ ] Block 2 looks newly designed, not traced.
+- [ ] Photographic/painterly background is removed or converted into flat subject layers.
+- [ ] Compression creates contrast without destroying identity-defining complexity.
+- [ ] No unsupported decorative geometry is invented.
 
-## Gate E — Text truthfulness (hard)
+## Gate 5 — Palette dependency [HARD]
 
-- [ ] No invented person identity
-- [ ] No invented date/location/brand/event fact
-- [ ] No invented human relationship
-- [ ] News text describes visible facts only unless user supplied context
-- [ ] Title/body are specific, not generic filler
+- [ ] 5–8 colors, default 6.
+- [ ] Palette comes from Block 2 only.
+- [ ] Every swatch has HEX.
 
-## Gate F — Editorial finish
+## Gate 6 — KEY ELEMENTS meaning [HARD]
 
-- [ ] Warm ivory/off-white board
-- [ ] Thin consistent dividers
-- [ ] Consistent block-title typography
-- [ ] Strong before/after balance
-- [ ] Legible HEX labels
-- [ ] Key-element labels do not crowd the visual fragments
-- [ ] No UI-dashboard, scrapbook, slide-deck, or corporate-infographic look
+- [ ] 4–6 elements.
+- [ ] No crop, screenshot, zoom, direct cutout or raw segmentation.
+- [ ] No generic SVG/UI icon family.
+- [ ] Each element is independently reconstructed.
+- [ ] Each element expresses a form, relation, rhythm, junction, gesture or motif.
+- [ ] At least one element should reveal a non-obvious structural insight when the source supports one.
 
-## Scene-specific extra gates
+## Gate 7 — KEY ELEMENTS pixel-independence [HARD]
 
-### Groups/news
+- [ ] No element carries an obvious rectangular crop boundary.
+- [ ] No element preserves exact local pixel texture from Block 2.
+- [ ] Elements are recomposed to stand alone.
 
-- [ ] A clear hero/support/tertiary hierarchy exists
-- [ ] Secondary figures do not compete with the visual anchor
+## Gate 8 — Text truthfulness [HARD]
 
-### Landscape
+- [ ] No invented identity/date/location/event/relationship/brand/history.
+- [ ] News/documentary text describes visible structure unless user supplies context.
 
-- [ ] Topology is preserved through flat planes
-- [ ] Scene is not reduced to generic decorative mountains/waves
+## Gate 9 — Editorial finish
 
-### Product/display
+- [ ] Warm ivory paper.
+- [ ] Clean hierarchy and hairline dividers.
+- [ ] Before/after pair has balanced visual weight.
+- [ ] No dashboard/scrapbook/presentation-template look.
 
-- [ ] Product hierarchy and arrangement rhythm remain readable
-- [ ] Environmental clutter is removed
+## Cold-start portability gate [HARD BEFORE RELEASE]
+
+Test the Skill in a brand-new conversation with no prior Photo Decode context. Run at least: portrait, ornate scene, action/news, city/architecture. If outputs collapse to one art style or KEY ELEMENTS become crops/icons, release fails.

@@ -15,4 +15,4 @@ Because the project was developed with awareness of an upstream non-commercial w
 
 ## Test images
 
-Development used user-supplied and reference images to test behavior across portraits, news, artworks, landscapes, groups, architecture, and product displays. This repository includes a small selected gallery of generated boards for demonstration. Each board may embed its source image in `ORIGINAL SOURCE`; source-material redistribution rights remain separate and must be checked independently.
+Development used user-supplied and reference images to test behavior across portraits, news, artworks, landscapes, groups, architecture, and product displays. This repository includes a composite golden behavior reference for development and evaluation. Any third-party source imagery or visually derived material remains subject to its own rights; source-material redistribution rights are separate from the Skill license and must be checked independently.

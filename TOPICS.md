@@ -13,7 +13,6 @@ Add these repository topics in GitHub settings:
 - `prompt-engineering`
 - `agent-skill`
 - `photo-decode`
-- `red-skill`
 
 Recommended short description:
 

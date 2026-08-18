@@ -15,7 +15,7 @@ We especially welcome improvements to:
 
 ## Do not silently change the contract
 
-The five-block framework and its dependency chain are v1.0 stability guarantees. A proposal that changes them should explain the user benefit and include before/after eval evidence.
+The five-block framework and its dependency chain are core stability guarantees. A proposal that changes them should explain the user benefit and include before/after eval evidence.
 
 ## Example submissions
 

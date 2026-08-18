@@ -1,3 +1,4 @@
-name: Photo Decode
-version: 1.0.0
-description: Decode an image into a five-block editorial board with a background-free flat reinterpretation, derived color palette, and derived key elements.
+interface:
+  display_name: "Photo Decode"
+  short_description: "Decode images with source-adaptive visual reconstruction"
+  default_prompt: "Use $photo-decode to turn this image into a five-block editorial analysis board."

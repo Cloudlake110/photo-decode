@@ -1,15 +1,33 @@
 ---
 name: photo-decode
-description: Turn an uploaded image into a fixed five-block editorial analysis board: original source, background-free flat reinterpretation, image essence, color palette derived only from the reinterpretation, and key elements derived only from the reinterpretation. Use for photos, paintings, portraits, news scenes, landscapes, groups, architecture, interiors, products, retail displays, and other visual references when the user wants a high-end editorial visual deconstruction and reconstruction.
+description: Analyze an uploaded image, reconstruct its visual logic into a source-adaptive background-free flat composition, then derive a palette and independently redrawn key visual elements. Use when the user asks to 解图 / Photo Decode a photo, painting, news scene, portrait, group, landscape, architecture, product, retail display, animal, sports/action scene, or other visual reference.
 ---
 
-# Photo Decode · 解图
+# Photo Decode V2 · 解图
 
-**Tagline:** 一张图，解出另一种视觉。 / Decode one image into another visual language.
+**Core promise:** 一张图，解出另一种视觉。
 
-## Core outcome
+**System identity:** visual analysis + structural distillation + source-adaptive reconstruction.
+**It is NOT:** a filter, a named art style, a tracing/vectorization routine, a crop extractor, or an icon generator.
 
-Create one polished **3:2 landscape editorial analysis board** with exactly five titled blocks:
+## Mandatory cold-start rule
+
+Before the first render in a session, read these files in order:
+
+1. `references/core-model.md`
+2. `references/reconstruction-protocol.md`
+3. `references/key-elements-protocol.md`
+4. `references/layout-spec.md`
+5. `references/scene-routing.md`
+6. `references/quality-gates.md`
+7. `references/prompt-compiler.md`
+8. `assets/golden-behavior-reference.png`
+
+Do not rely on prior chat history. The Skill must work in a clean session.
+
+## Fixed output contract
+
+Create exactly one **3:2 landscape editorial board** with exactly five numbered blocks:
 
 1. **ORIGINAL SOURCE**
 2. **REINTERPRETED VISUAL (FLAT)**
@@ -17,182 +35,163 @@ Create one polished **3:2 landscape editorial analysis board** with exactly five
 4. **COLOR PALETTE**
 5. **KEY ELEMENTS**
 
-The five blocks are a dependency chain, not five independent analyses:
+No sixth analytical block. Do not rename these labels.
 
-`ORIGINAL SOURCE → REINTERPRETED VISUAL (FLAT) → COLOR PALETTE + KEY ELEMENTS`
+The dependency graph is strict:
 
-`IMAGE ESSENCE` explains the visual logic of the source and the reinterpretation.
+`ORIGINAL SOURCE → ANALYSIS MODEL → REINTERPRETED VISUAL → COLOR PALETTE + KEY ELEMENTS`
 
-## Non-negotiable transformation rule
+`IMAGE ESSENCE` explains the visual logic discovered by the analysis model.
 
-The right-side visual is **not** a copy, filter, tracing, vectorization, or lightly stylized version of the original.
+## The two-stage intelligence model
 
-It must follow this sequence:
+### Stage A — Visual analysis (must happen before drawing)
 
-**complex information → extract → select → compress → remove photographic background → flatten → reorganize → new visual object**
+Internally build a **Visual Structure Ledger** with these fields:
 
-The result must feel visibly new while remaining traceable to the source.
+- **Anchor:** the primary visual/narrative subject or relation.
+- **Hierarchy:** hero / support / tertiary groups.
+- **Spatial grammar:** scale, direction, overlap, symmetry/asymmetry, repetition, rhythm, axes.
+- **Identity cues:** the minimum forms needed for recognition.
+- **Tension / action:** gesture, force, flow, gaze, contact, weight, motion, conflict.
+- **Keep:** structures that must survive.
+- **Delete:** incidental background, texture, clutter, realism and context that can disappear.
+- **Source-style cues:** line character, shape logic, ornament density, material rhythm, color relationships that actually belong to this image.
+- **Key-element candidates:** 4–6 visual grammar units that explain why the final reconstruction is recognizable.
 
-### Flat does **not** mean generic vector minimalism
+Do not display this ledger unless the user asks.
 
-`FLAT` describes the removal of photographic depth/background and the compression of information. It does **not** require SVG-like simplification, UI-icon aesthetics, logo geometry, uniform stroke weights, or pictogram minimalism.
+### Stage B — Visual reconstruction
 
-For information-rich sources, the reinterpreted visual may remain visually rich. Preserve selective ornament, internal pattern, line hierarchy, texture cues, asymmetry, and source-specific structural detail whenever those features carry identity. Compression is **selective**, not radical minimalization.
+Build a new two-dimensional composition from the ledger.
 
-The target visual language is a **premium editorial illustration / museum design study**, not a generic vector infographic.
+The reconstruction must:
 
-### Right panel must
+- remove photographic/painterly background as background;
+- preserve identity-defining relationships, not every pixel;
+- compress complexity without flattening all images to the same complexity level;
+- preserve meaningful ornament, rhythm, anatomy, architecture or equipment when those are identity-defining;
+- use flat planes, controlled contours, selected internal detail and limited tonal hierarchy;
+- remain recognizably derived from the source while looking like a newly designed visual object.
 
-- identify the visual/narrative anchor first;
-- preserve the minimum identity-defining shapes and relationships needed for recognition;
-- remove incidental environment, clutter, photographic depth, texture noise, realistic lighting, reflections, and non-essential secondary objects;
-- compress three-dimensional volume into a two-dimensional graphic language;
-- use clean silhouettes and flat color planes while retaining selected source-specific internal details, ornamental rhythms, contour breaks, and material cues when they are identity-defining;
-- preserve important left/right, top/bottom, scale, direction, overlap, repetition, and hierarchy relationships when they are identity-defining;
-- create strong visual impact through simplification, not through invented decoration;
-- contain **no unsupported circles, arches, waves, blobs, grids, suns, dots, or ornamental geometry** unless that form is traceable to the retained subject structure.
+## Source-adaptive style rule — HARD
 
-### Background rule
+**There is no default Photo Decode art style.** The board layout is consistent; the reconstructed visual is source-adaptive.
 
-For portraits, products, groups, architecture, news scenes, objects, interiors, and displays: **remove the photographic background completely** from the right visual.
+Do NOT default unrelated inputs to any fixed medium or look, including:
 
-For landscapes or paintings where the environment is itself the subject: remove the **photographic/painterly backdrop quality**. Retain only identity-defining environmental layers as simplified flat subject planes (for example: mountain ridge, sea band, village mass), never as a realistic background.
+- engraving / etching / woodcut / linocut;
+- comic / anime / posterized illustration;
+- generic vector iconography;
+- one universal contour style;
+- one universal texture or hatch pattern;
+- one universal geometric abstraction language.
 
-## Five-block contract
+A named style is allowed only when the user explicitly requests it or when it is genuinely derived from the source artwork's own visual language.
+
+`FLAT` means **depth and information are structurally compressed**. It does not mean “turn everything into simple SVG shapes.”
+
+## Block rules
 
 ### 1. ORIGINAL SOURCE
 
-- Use the uploaded image as the source reference.
-- Preserve the source faithfully; do not redraw, extend, repair, beautify, or invent content.
-- Keep it legible and visually dominant enough for before/after comparison.
+Use the uploaded source faithfully. Do not beautify, repair, extend or reinterpret this block.
 
 ### 2. REINTERPRETED VISUAL (FLAT)
 
-This is the design engine of the board.
+This is the primary design output.
 
-Before rendering, internally create a short **Source → Retained Feature → Flat Treatment** ledger. Do not display the ledger unless requested.
+It must be:
 
-Example:
+- a reconstruction, not a filter;
+- background-free in photographic terms;
+- source-adaptive, not medium-templated;
+- compressed but not generically simplified;
+- coherent as a standalone composition;
+- faithful to important spatial/action relationships.
 
-- ornate carved column → vertical silhouette + selected floral rhythm → flat ivory/stone bands
-- stepped tower → narrowing stacked tiers → simplified gold planes
-- portrait hair → irregular outer contour → one dark flat mass
-- group interaction → primary figure + supporting arc → hierarchy of 1 hero / 2 support silhouettes
-
-Every major retained feature must have a source justification. Every major new mark must have a retained-feature justification.
+**Anti-cheat test:** If the right visual could be produced by applying one named style/filter to the source, it fails.
 
 ### 3. IMAGE ESSENCE
 
 Include:
 
 - one concise editorial title;
-- optional short subtitle;
-- a short paragraph (roughly 35–80 English words or equivalent Chinese length) explaining what visually defines the image and what the flat reinterpretation preserves.
+- optional short subtitle or 2–4 keywords;
+- 35–80 English words or equivalent Chinese explaining the structural visual logic.
 
-Rules:
-
-- describe visible structure, rhythm, contrast, gesture, hierarchy, or atmosphere;
-- avoid generic AI copy such as “timeless beauty”, “quiet elegance”, “where art meets…” unless truly specific;
-- do not invent dates, locations, identities, brands, historical claims, or relationships not supplied by the user;
-- for news images, describe visible action and visual tension without identifying people or asserting unprovided event facts;
-- for portraits, never infer or name a real person from the image alone. Use a user-provided identity only if the user supplied it.
+Describe visible structure, rhythm, relation, gesture, tension, hierarchy and atmosphere. Do not invent identity, date, location, event facts, brand, relationship or history not supplied by the user.
 
 ### 4. COLOR PALETTE
 
-**Critical dependency:** derive the palette from **REINTERPRETED VISUAL (FLAT)** only — never directly from ORIGINAL SOURCE.
+Derive **only from the completed REINTERPRETED VISUAL**.
 
-- show 5–8 swatches; default 6;
-- exclude the board paper color from the palette unless that color is deliberately part of the right visual;
-- keep colors visibly distinct and useful;
-- put a readable uppercase HEX code under **every** swatch, e.g. `#C8B59A`;
-- no swatch may be unlabeled.
-
-If a source color was removed during reinterpretation, it must not reappear merely because it existed in the original.
+- 5–8 swatches; default 6.
+- Every swatch must have a readable uppercase HEX value.
+- Do not reintroduce source colors that were intentionally removed.
+- Do not include the board paper color unless it is intentionally part of the reconstructed visual.
 
 ### 5. KEY ELEMENTS
 
-**Critical dependency:** derive the key elements from **REINTERPRETED VISUAL (FLAT)** only — never directly from ORIGINAL SOURCE.
+KEY ELEMENTS are **not crops and not icons**.
 
-- show 4–6 **isolated miniature visual fragments** taken from the design language of the right visual;
-- each item should look like a carefully extracted/recomposed piece of `REINTERPRETED VISUAL (FLAT)`, not a separately designed icon;
-- preserve source-specific silhouette, proportion, line hierarchy, ornamental detail, internal pattern, and color relationships when relevant;
-- elements may be miniature figures, architectural fragments, garment contours, motifs, structural modules, gestures, or object parts; they do **not** need to share one icon shape or one stroke weight;
-- use the same rendering character and palette as the right visual;
-- each element must correspond to a retained component in the right visual;
-- do not include any background element that was removed;
-- do not introduce a new object just because it was visible in the original source;
-- use concise labels under the elements when labels improve clarity;
-- **never convert KEY ELEMENTS into an SVG/UI icon set, line-icon system, pictogram family, logo family, emoji-like set, or generic symbol library.**
+They are 4–6 **independently reconstructed visual grammar units** that help a viewer understand what makes the image visually recognizable or structurally distinctive.
 
-## Fixed editorial layout
+Each element must be freshly redrawn/recomposed from the analysis ledger and the right-side reconstruction. It may represent:
 
-Read `references/layout-spec.md` before rendering.
+- a signature form;
+- a structural junction;
+- a relation between forms;
+- a repeated rhythm/pattern;
+- a gesture/action unit;
+- an identifying object architecture;
+- a distinctive contour or motif.
 
-Default visual system:
+A KEY ELEMENT must NOT be:
 
-- canvas: 3:2 landscape, e.g. 1536×1024;
-- warm ivory / off-white paper base;
-- generous margins and disciplined grid;
-- thin hairline dividers;
-- small uppercase sans/mono block labels;
-- editorial serif display title + clean sans body;
-- no glossy UI cards, no neon, no generic AI gradient, no excessive drop shadows;
-- premium museum/editorial-board feeling, not a corporate slide and not a scrapbook.
+- a rectangular crop or screenshot;
+- a zoomed detail;
+- a masked cutout copied from the right visual;
+- raw segmentation;
+- a generic SVG/UI icon;
+- a pictogram family forced into one line weight.
 
-## Scene routing
+**Reconstruction test:** if an element visibly contains the same pixel texture or exact local rendering as the right visual, treat it as a crop and redraw it.
 
-Read `references/scene-routing.md` and apply the matching branch.
-
-Important hierarchy rules:
-
-- **single portrait:** retain 3–5 identity-defining visual features; remove setting;
-- **group/crowd:** do not flatten everyone equally; select a hero, support, and tertiary layer;
-- **news scene:** extract the visible action/conflict axis; background and witnesses are secondary unless structurally necessary;
-- **landscape:** preserve large spatial topology and color masses, but convert scenery to flat subject layers;
-- **product/display:** preserve product hierarchy, arrangement rhythm, and hero/support relationships; remove retail/environment clutter;
-- **architecture/interior:** preserve defining structural modules, axes, apertures, and circulation rhythm; remove incidental people/details unless crucial;
-- **painting/artwork:** preserve composition and motifs while converting painterly information into a fresh flat visual language; do not add motifs not present in the source.
+**Insight test:** every element should teach the viewer something about the image's visual grammar that is not obvious from a simple crop.
 
 ## Generation workflow
 
-1. Inspect the source image.
-2. Classify the scene type.
-3. Identify the visual anchor and supporting hierarchy.
-4. List the minimum retained features.
-5. Decide what background/context is deleted.
-6. Construct the flat reinterpretation.
-7. Derive the palette **from the flat reinterpretation**.
-8. Derive key elements **from the flat reinterpretation**.
-9. Write the image essence.
-10. Compose the five-block board.
-11. Run every gate in `references/quality-gates.md`.
-12. If any hard gate fails, regenerate/fix before presenting.
+1. Read mandatory reference files and golden reference.
+2. Inspect source.
+3. Classify scene type.
+4. Build Visual Structure Ledger.
+5. Select source-adaptive reconstruction logic.
+6. Construct Block 2.
+7. Run the anti-filter gate.
+8. Derive Block 4 from Block 2.
+9. Reconstruct Block 5 from the ledger + Block 2; never crop.
+10. Write Block 3.
+11. Compose fixed five-block board.
+12. Run all gates in `references/quality-gates.md`.
+13. If any hard gate fails, fix/regenerate before presenting.
 
-## Hard failure conditions
+## Hard stop conditions
 
-Do not present the result as final if any of these are true:
+Do not present as final if:
 
-- one of the five block titles is missing;
-- the right visual still looks like a copied photograph or a lightly filtered source;
-- the right visual retains an incidental photographic background;
-- the palette was visibly inherited from colors removed from the right visual;
-- any palette swatch lacks a HEX label;
-- KEY ELEMENTS contains background/context removed from the right visual;
-- KEY ELEMENTS is derived independently from the source rather than from the right visual;
-- all figures in a crowd are treated equally when a clear hierarchy exists;
-- generic circles/blobs/arches/waves appear without traceable justification;
-- invented dates, identities, locations, relationships, or historical claims appear;
-- the fixed five-block framework is replaced by a different moodboard/template.
-
-## Reference files
-
-- `references/layout-spec.md` — fixed five-block layout and typography
-- `references/transformation-pipeline.md` — flat reinterpretation method
-- `references/scene-routing.md` — rules by image type
-- `references/quality-gates.md` — preflight and final validation
-- `references/prompt-template.md` — image generation prompt compiler
-- `references/style-lock.md` — portability rules that prevent SVG/icon drift across fresh sessions
+- block names/layout drift;
+- right visual is a fixed-style transformation or filter;
+- unrelated inputs would plausibly receive the same texture/medium;
+- right visual is only a traced/vectorized source;
+- incidental background survives as realistic scenery;
+- meaningful source structure has been over-simplified merely to look “flat”;
+- palette comes from source instead of reconstruction;
+- any HEX value is missing;
+- KEY ELEMENTS are crops, screenshots, masked cutouts or generic icons;
+- KEY ELEMENTS do not explain visual grammar;
+- invented factual claims appear.
 
 ## Output behavior
 
-When the user provides an image and asks to use Photo Decode/解图, proceed directly unless essential information is missing. Generate the final board rather than stopping at a prose explanation.
+When the user uploads an image and asks to call 解图 / Photo Decode, proceed directly to the final board unless essential input is genuinely missing.

@@ -1,89 +1,43 @@
-# Scene Routing
+# Scene Routing — Source-Adaptive Reconstruction
 
-## Portrait / single person
+The routing changes **what information is preserved**, not the board template.
 
-Goal: preserve identity-defining visual structure without photoreal copying.
+## Portrait
 
-Prioritize:
+Preserve 3–6 identity cues such as hair silhouette, gaze, face contour, beard/moustache/glasses, neckline, garment mass. Remove setting. Avoid default engraving/hatching.
 
-- outer hair/head silhouette;
-- face/profile contour;
-- signature facial mass such as beard/moustache/glasses only if visibly defining;
-- neckline/shoulder relation;
-- one or two garment planes.
+## Group / crowd
 
-Remove the setting. Never infer the real person's identity from the image alone.
+Select hierarchy or flow. Preserve meaningful spacing, gestures and collective geometry. Do not treat all people equally unless equal repetition itself is the subject.
 
-## Group / crowd portrait
+## News / documentary
 
-Goal: establish hierarchy, not equal treatment.
+Preserve visible event/action axis, proximity, tension, protection/conflict/support relationships. Delete incidental setting. Do not infer identities or facts from the image alone.
 
-1. Select a visual hero from composition/action, not fame.
-2. Select 1–3 supporting figures/groups.
-3. Reduce tertiary people to low-detail silhouettes or omit them.
-4. Preserve group geometry, gesture direction, and meaningful spacing.
+## Sports / dynamic action
 
-If no obvious hero exists, choose the compositional anchor with the strongest scale/contrast/centrality/gesture combination.
+Preserve body/vehicle posture, direction, impact/contact, pursuit, force and timing. Motion marks may be used only when derived from actual movement axes in the source.
 
-## News / documentary scene
+## Animal
 
-Goal: compress the visible action axis.
+Preserve species-defining anatomy, silhouette, facial landmarks, fur/mane mass and posture. Avoid mascot/logo simplification unless requested.
 
-- isolate principal action/conflict/interaction;
-- treat witnesses, press, security, or crowd as support unless they define the action;
-- remove walls, street clutter, signage, and incidental environment unless structurally necessary;
-- do not identify people or assert event facts from the image alone;
-- write IMAGE ESSENCE around visible tension, gesture, proximity, and hierarchy.
+## Landscape
 
-## Landscape / high-saturation scenery
+Preserve topology: ridge, water band, settlement mass, road/bridge axis, vegetation plane, sky only when structurally meaningful. Do not default to decorative wave/mountain symbols.
 
-Goal: preserve topology, not photographic depth.
+## Architecture / city / interior
 
-Retain as flat layers when important:
+Preserve massing, axes, apertures, roof/eave rhythm, stacked levels, circulation and signature structural modules. Rich architecture may remain richly articulated.
 
-- sky/atmospheric mass only if visually defining;
-- mountain ridge;
-- sea/river band;
-- village/city mass;
-- dominant vegetation plane;
-- strong man-made axis (bridge/road/rail).
+## Product / retail
 
-Compress buildings/foliage into rhythmic masses. Do not reproduce every house/tree.
+Preserve hero/support product hierarchy, fixture relation, display rhythm and signature product geometry. Remove retail clutter.
 
 ## Painting / artwork
 
-Goal: translate composition into a new flat language, not reproduce brushwork.
+Preserve original composition, motif logic, figure relations, directional thrust and source-specific visual language. Translate the original medium into flat reconstruction without replacing it with a different named style.
 
-- keep dominant figures/motifs and compositional thrust;
-- compress painterly detail;
-- remove painterly texture as background noise;
-- use a transformed palette based on the flat reinterpretation;
-- avoid adding symbolic motifs not present in the source.
+## Ornate cultural / religious imagery
 
-## Architecture / interior / installation
-
-Prioritize:
-
-- main structural silhouette;
-- axis and aperture rhythm;
-- signature modules;
-- circulation/flow line if visually explicit;
-- hero object/installation.
-
-Remove incidental people and clutter unless they define scale or interaction.
-
-## Product / retail / display
-
-Prioritize:
-
-- hero product(s);
-- product-to-fixture relationship;
-- display rhythm and shelf hierarchy;
-- signature arch/frame/table/fixture only when it remains in the flat reinterpretation;
-- dominant brand-color planes only if they survive transformation.
-
-Remove unrelated store/environment context.
-
-## Strong graphic / advertising image
-
-Separate subject from embedded layout. Retain only graphic elements that define the source's visual identity. Do not blindly reproduce source advertising copy or logos. If text is important, compress it to shape/typographic mass unless the user specifically requires exact text.
+Preserve hierarchy, ornament families, axial structure, repeated motifs and symbolic forms visible in the source. “Flat” must not erase meaningful ornament.

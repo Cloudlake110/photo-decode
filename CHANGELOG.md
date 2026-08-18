@@ -1,20 +1,23 @@
 # Changelog
 
-## 1.0.0 — 2026-08-17
+## 2.0.0 — stable architecture rewrite
 
-Initial public release candidate after cross-category stability testing.
+Clean rewrite of Photo Decode after cold-start portability failures in v1.x.
 
-Locked behaviors:
+### Removed architectural shortcuts
 
-- fixed five-block editorial framework;
-- right-panel complex-information extraction, compression, background removal, and flattening;
-- palette derived only from the right-panel reinterpretation;
-- HEX code under every swatch;
-- key elements derived only from the right-panel reinterpretation;
-- group/news hierarchy rules;
-- portrait, landscape, artwork, architecture, and product-display routing;
-- anti-template and anti-hallucination quality gates.
+- fixed-medium / engraving-style drift;
+- ambiguous `icon-like/glyph-like` KEY ELEMENT guidance;
+- crop/cutout KEY ELEMENT behavior;
+- extra analytical block drift.
 
-### Documentation gallery
-- Added generated development examples across architecture, product advertising, landscape, news, portrait, group, and retail scenes.
-- Added browser-authenticated GitHub publishing scripts for macOS/Linux and Windows.
+### Added
+
+- Visual Structure Ledger;
+- source-adaptive reconstruction model;
+- explicit anti-filter gate;
+- KEY ELEMENTS visual-grammar reconstruction protocol;
+- pixel-independence / grammar / teaching tests;
+- cold-start portability gate;
+- cross-image style diversity evaluation;
+- multi-category golden behavior reference.

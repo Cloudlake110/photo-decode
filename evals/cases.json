@@ -1,0 +1,83 @@
+{
+  "skill": "photo-decode",
+  "version": "2.0.0",
+  "cases": [
+    {
+      "id": "portrait",
+      "must": [
+        "no fixed engraving/woodcut look",
+        "preserve identity cues",
+        "remove setting",
+        "key elements reconstructed, not crops"
+      ]
+    },
+    {
+      "id": "ornate",
+      "must": [
+        "retain meaningful ornament complexity",
+        "preserve hierarchy and motifs",
+        "no generic simplification",
+        "key elements can remain detailed"
+      ]
+    },
+    {
+      "id": "city",
+      "must": [
+        "preserve massing and stacked rhythm",
+        "remove photographic glow/background",
+        "key elements redraw structural modules"
+      ]
+    },
+    {
+      "id": "action",
+      "must": [
+        "preserve action axis/contact",
+        "no generic motion decorations",
+        "key elements express gesture/relation"
+      ]
+    },
+    {
+      "id": "crowd",
+      "must": [
+        "preserve flow/hierarchy",
+        "avoid equal-detail individualization unless repetition is subject",
+        "no crop elements"
+      ]
+    },
+    {
+      "id": "artwork",
+      "must": [
+        "follow source visual language",
+        "do not impose external named style",
+        "preserve composition/motifs"
+      ]
+    },
+    {
+      "id": "landscape",
+      "must": [
+        "preserve topology and directional flow",
+        "convert environment into flat subject layers",
+        "avoid generic mountain or wave symbols",
+        "key elements reconstruct structural landscape grammar"
+      ]
+    },
+    {
+      "id": "product_display",
+      "must": [
+        "preserve hero and support product hierarchy",
+        "preserve fixture relation and display rhythm",
+        "remove unrelated retail context",
+        "key elements reconstruct product and fixture grammar"
+      ]
+    },
+    {
+      "id": "global",
+      "must": [
+        "exact five block labels",
+        "palette from block2 only",
+        "all swatches hex",
+        "no sixth block"
+      ]
+    }
+  ]
+}

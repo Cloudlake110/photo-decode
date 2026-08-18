@@ -1,144 +1,81 @@
-# Photo Decode · 解图
+# Photo Decode V2 · 解图
 
-<p align="center">
-  <strong>一张图，解出另一种视觉。</strong><br>
-  Decode one image into another visual language.
-</p>
+**一张图，解出另一种视觉。**
 
-<p align="center">
-  <img src="https://img.shields.io/badge/skill-v1.0.0-2B2B2B" alt="Skill v1.0.0">
-  <img src="https://img.shields.io/badge/status-stable-4C7A67" alt="Stable">
-  <img src="https://img.shields.io/badge/license-non--commercial-B8844F" alt="Non-commercial license">
-  <img src="https://img.shields.io/badge/examples-5-D76A5A" alt="5 examples">
-  <img src="https://img.shields.io/badge/Codex-Skill-111111" alt="Codex Skill">
-</p>
+Photo Decode V2 is a clean rewrite of the original Skill. It is a **visual analysis and reconstruction system**, not a style filter.
 
-Photo Decode is a reusable Agent/Codex Skill that turns an uploaded image into a fixed five-block editorial analysis board:
+Its signature pipeline is:
 
-1. **ORIGINAL SOURCE** — the faithful source image
-2. **REINTERPRETED VISUAL (FLAT)** — a new background-free flat reconstruction
-3. **IMAGE ESSENCE** — concise editorial reading
-4. **COLOR PALETTE** — colors derived from the flat reconstruction, with HEX codes
-5. **KEY ELEMENTS** — icon-like elements derived from the flat reconstruction
+> **analyze structure → choose what matters → remove background → compress relations → reconstruct a source-adaptive flat visual → derive palette → reconstruct key visual grammar**
 
-The core transformation is:
+## Why V2 exists
 
-> **complex information → extraction → selection → compression → background removal → flattening → new visual object**
+V1 exposed two portability failures in clean sessions:
 
-## Why it is different
+1. unrelated inputs could collapse into one engraving/printmaking look;
+2. `KEY ELEMENTS` could degrade into crops/cutouts instead of meaningful visual abstractions.
 
-The right-side visual is not a filter, tracing, or vectorized copy. It deliberately removes photographic complexity and rebuilds the subject as a cleaner two-dimensional visual object.
+V2 removes both shortcuts from the architecture itself.
 
-Two dependency rules are strict:
+## Fixed five-block board
 
-- `COLOR PALETTE` is extracted from the **reinterpreted visual**, not the source.
-- `KEY ELEMENTS` are extracted from the **reinterpreted visual**, not the source.
+1. `ORIGINAL SOURCE`
+2. `REINTERPRETED VISUAL (FLAT)`
+3. `IMAGE ESSENCE`
+4. `COLOR PALETTE`
+5. `KEY ELEMENTS`
 
-This makes the board one coherent visual system rather than five unrelated analyses.
+## What “flat” means
 
-## Stable five-block contract
+Flat means **structural depth and information are compressed**. It does not mean every source becomes a minimal vector drawing.
 
-```text
-ORIGINAL SOURCE
-      ↓
-REINTERPRETED VISUAL (FLAT)
-      ↓
-COLOR PALETTE + KEY ELEMENTS
-```
+An ornate temple may stay richly articulated. A portrait may become restrained. A city may preserve dense roofline rhythm. A sports image may preserve collision/action geometry. The visual language follows the source.
 
-`IMAGE ESSENCE` explains the visual logic connecting source and reinterpretation.
+## KEY ELEMENTS in V2
 
-## Selected examples
+KEY ELEMENTS are **independently reconstructed visual grammar units**. They are not crops, screenshots, masks or generic icons.
 
-| Portrait | Saturated landscape |
-|---|---|
-| ![Portrait](examples/gallery/06-portrait.png) | ![Landscape](examples/gallery/04-saturated-landscape.png) |
+They answer: *what forms, relations, rhythms, junctions, gestures or motifs make this image visually itself?*
 
-| Complex news | Group portrait |
-|---|---|
-| ![Complex news](examples/gallery/05-complex-news-scene.png) | ![Group portrait](examples/gallery/07-group-portrait.png) |
+## Cold-start reliability
 
-### Retail / product display
+V2 includes a mandatory cold-start test. A release fails if a clean new session:
 
-![Retail display](examples/gallery/08-retail-display.png)
+- applies one fixed art style across unrelated inputs; or
+- turns KEY ELEMENTS into crops/icons.
 
-See [`examples/README.md`](examples/README.md) for what each example validates.
+See `references/portability-test.md`.
 
-## Supported inputs
+## Golden behavior reference
 
-- portraits
-- group/crowd photos
-- news/documentary scenes
-- landscapes
-- paintings/artworks
-- architecture/interiors/installations
-- products and retail displays
-- advertising/graphic images
+See `assets/golden-behavior-reference.png`. It demonstrates **behavioral diversity**, not one style to imitate.
 
 ## Install in Codex
 
 ```bash
-mkdir -p ~/.codex/skills
 git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo-decode
 ```
 
-Start a new Codex session if needed.
+Start a new Codex session if the Skill does not appear immediately.
 
 ## Use
 
 Upload an image and say:
 
 ```text
-Use photo-decode on this image.
-```
-
-Chinese:
-
-```text
 调用“解图 / Photo Decode”处理这张图片。
 ```
 
-## Quality gates
+or:
 
-The Skill includes hard checks for:
-
-- five-block layout integrity
-- true flat reinterpretation
-- background removal
-- palette dependency
-- HEX labels under every swatch
-- key-element dependency
-- crowd/news hierarchy
-- truthfulness and anti-hallucination
-- anti-template geometry
-
-See [`references/quality-gates.md`](references/quality-gates.md).
-
-## Documentation
-
-- [`SKILL.md`](SKILL.md) — executable Skill contract
-- [`references/transformation-pipeline.md`](references/transformation-pipeline.md) — complex → flat method
-- [`references/scene-routing.md`](references/scene-routing.md) — rules by image category
-- [`references/layout-spec.md`](references/layout-spec.md) — fixed five-block grid
-- [`references/prompt-template.md`](references/prompt-template.md) — prompt compiler
-- [`RELEASE_NOTES.md`](RELEASE_NOTES.md) — v1.0.0 release notes
-
-## Public-source declaration
-
-Photo Decode is published as **source-available for personal, educational, research, and other non-commercial use**. It is intentionally **not described as OSI open source**, because the current license contains non-commercial restrictions inherited from the project's rights context. See [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).
-
-Contributions that improve stability, scene routing, evaluation, or documentation are welcome under the same rights framework. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## Provenance / upstream inspiration
-
-Photo Decode was developed through iterative testing and extends a visual-deconstruction direction inspired in part by **ZzzLc0405/photo-abstract-editorial**. The upstream project is credited in `NOTICE.md`; this repository does not redistribute upstream prompt files, documentation text, or upstream example images.
-
-## Example-image rights
-
-The five selected boards are included as development demonstrations. Some boards contain a source image inside `ORIGINAL SOURCE`. Redistribution rights for source material remain separate from the Skill license; replace or remove any example whose source rights are not cleared for your use.
+```text
+Use Photo Decode on this image.
+```
 
 ## Version
 
-**v1.0.0 — Stable first public release candidate**
+**v2.0.0 — stable architecture rewrite.**
 
-See [`CHANGELOG.md`](CHANGELOG.md).
+## License
+
+Source-available for personal, educational, research, and other non-commercial use. See [`LICENSE.md`](LICENSE.md) and [`NOTICE.md`](NOTICE.md).

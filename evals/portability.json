@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "required_clean_session": true,
+  "required_categories": [
+    "portrait",
+    "ornate",
+    "news_or_action",
+    "crowd",
+    "city",
+    "artwork",
+    "landscape",
+    "product_display"
+  ],
+  "failure_signatures": [
+    "unrelated outputs share engraving/etching/woodcut medium",
+    "key elements are rectangular crops or masked cutouts",
+    "key elements form generic svg icon family",
+    "right visual is a traced/filter version of source",
+    "block names or positions drift",
+    "palette is sourced before reinterpretation"
+  ],
+  "release_rule": "All cold-start cases must pass before tagging a public release."
+}
