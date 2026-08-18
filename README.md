@@ -25,6 +25,14 @@ V2 removes both shortcuts from the architecture itself.
 4. `COLOR PALETTE`
 5. `KEY ELEMENTS`
 
+## Example gallery
+
+See the [eight-case V2 regression gallery](examples/v2-regression/README.md) for side-by-side source images and completed Photo Decode boards across documentary scenes, group gesture, landscape, artwork, animals, sports/action and ornate architecture.
+
+| Documentary / group action | Ornate architecture |
+| --- | --- |
+| [![Load-Bearing Flow](examples/v2-regression/assets/01-bridge-board.png)](examples/v2-regression/README.md#01--load-bearing-flow) | [![Rings Upon an Axis](examples/v2-regression/assets/08-rings-upon-axis-board.png)](examples/v2-regression/README.md#08--rings-upon-an-axis) |
+
 ## What “flat” means
 
 Flat means **structural depth and information are compressed**. It does not mean every source becomes a minimal vector drawing.

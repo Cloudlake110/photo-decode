@@ -30,6 +30,14 @@ V2 是一次从零重写，不是给 v1 继续叠补丁。
 4. COLOR PALETTE
 5. KEY ELEMENTS
 
+## 示例画廊
+
+查看[八案例 V2 回归测试画廊](examples/v2-regression/README.md)，并排对比源图与完整解图画板。案例覆盖纪实、群体姿态、景观、艺术图、动物、体育动作与华丽建筑，直观展示“版式稳定、重构逻辑随源图变化”。
+
+| 纪实／群体动作 | 华丽建筑 |
+| --- | --- |
+| [![Load-Bearing Flow](examples/v2-regression/assets/01-bridge-board.png)](examples/v2-regression/README.md#01--load-bearing-flow) | [![Rings Upon an Axis](examples/v2-regression/assets/08-rings-upon-axis-board.png)](examples/v2-regression/README.md#08--rings-upon-an-axis) |
+
 ## 稳定性承诺
 
 V2 必须在一个完全新的窗口里，仅靠 Skill 本身就能稳定工作。
