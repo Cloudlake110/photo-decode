@@ -1,9 +1,11 @@
 ---
 name: photo-decode
-description: Analyze an uploaded image, reconstruct its visual logic into a source-adaptive background-free flat composition, then derive a palette and independently redrawn key visual elements. Use when the user asks to 解图 / Photo Decode a photo, painting, news scene, portrait, group, landscape, architecture, product, retail display, animal, sports/action scene, or other visual reference.
+description: Photo Decode / PhotoDecode / 解图 (photo-decode) — Analyze an uploaded image, reconstruct its visual logic into a source-adaptive background-free flat composition, then derive a palette and independently reconstructed key visual elements. Use when the user asks to 解图, Photo Decode, PhotoDecode, photo-decode, decode an image, analyze an image, or visually reconstruct a photo, painting, news scene, portrait, group, landscape, architecture, product, retail display, animal, sports/action scene, or other visual reference.
 ---
 
-# Photo Decode V2 · 解图
+# Photo Decode / 解图
+
+**Search aliases:** `Photo Decode` · `PhotoDecode` · `photo-decode` · `解图`
 
 **Core promise:** 一张图，解出另一种视觉。
 
@@ -194,4 +196,4 @@ Do not present as final if:
 
 ## Output behavior
 
-When the user uploads an image and asks to call 解图 / Photo Decode, proceed directly to the final board unless essential input is genuinely missing.
+When the user uploads an image and asks to call 解图 / Photo Decode / PhotoDecode / photo-decode, proceed directly to the final board unless essential input is genuinely missing.

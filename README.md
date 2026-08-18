@@ -1,8 +1,12 @@
-# Photo Decode V2 · 解图
+# Photo Decode / 解图
 
 **一张图，解出另一种视觉。**
 
-Photo Decode V2 is a clean rewrite of the original Skill. It is a **visual analysis and reconstruction system**, not a style filter.
+**Search aliases:** `Photo Decode` · `PhotoDecode` · `photo-decode` · `解图`
+
+Photo Decode is an AI Skill for visual analysis and structural image decoding. It analyzes a source image, reconstructs its visual logic into a new source-adaptive flat composition, derives a color palette, and reveals key visual elements.
+
+As a Codex Skill, it supports image analysis and photo analysis across photographs, paintings, portraits, landscapes, architecture, products, animals and action scenes. Its visual reconstruction and image generation workflow is source-adaptive, not a style filter.
 
 Its signature pipeline is:
 
@@ -51,6 +55,12 @@ See `references/portability-test.md`.
 See `assets/golden-behavior-reference.png`. It demonstrates **behavioral diversity**, not one style to imitate.
 
 ## Install in Codex
+
+Please install Photo Decode / 解图 from:
+https://github.com/Cloudlake110/photo-decode
+
+请从这个 GitHub 仓库安装 Photo Decode / 解图：
+https://github.com/Cloudlake110/photo-decode
 
 ```bash
 git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo-decode

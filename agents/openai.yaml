@@ -1,4 +1,4 @@
 interface:
-  display_name: "Photo Decode"
-  short_description: "Decode images with source-adaptive visual reconstruction"
-  default_prompt: "Use $photo-decode to turn this image into a five-block editorial analysis board."
+  display_name: "Photo Decode / 解图"
+  short_description: "PhotoDecode / photo-decode: decode images through visual analysis and source-adaptive reconstruction"
+  default_prompt: "Use $photo-decode to decode this image into a five-block editorial analysis board."
