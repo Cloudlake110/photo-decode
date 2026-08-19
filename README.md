@@ -4,9 +4,9 @@
 
 **Search aliases:** `Photo Decode` · `PhotoDecode` · `photo-decode` · `解图`
 
-Photo Decode is an AI Skill for visual analysis and structural image decoding. It analyzes a source image, reconstructs its visual logic into a new source-adaptive flat composition, derives a color palette, and reveals key visual elements.
+Photo Decode is a portable Agent Skill for visual analysis and structural image decoding. It uses the `SKILL.md` format so compatible AI environments can install and run it without requiring Codex.
 
-As a Codex Skill, it supports image analysis and photo analysis across photographs, paintings, portraits, landscapes, architecture, products, animals and action scenes. Its visual reconstruction and image generation workflow is source-adaptive, not a style filter.
+It supports photographs, paintings, portraits, landscapes, architecture, products, animals and action scenes. Its visual reconstruction and image generation workflow is source-adaptive, not a style filter.
 
 Its signature pipeline is:
 
@@ -54,13 +54,20 @@ See `references/portability-test.md`.
 
 See `assets/golden-behavior-reference.png`. It demonstrates **behavioral diversity**, not one style to imitate.
 
-## Install in Codex
+## Install and use
 
-Please install Photo Decode / 解图 from:
-https://github.com/Cloudlake110/photo-decode
+If your AI supports installing Agent Skills, send it this instruction:
 
-请从这个 GitHub 仓库安装 Photo Decode / 解图：
+```text
+Please install and use Photo Decode / 解图 from this GitHub repository:
 https://github.com/Cloudlake110/photo-decode
+```
+
+The repository root is the complete Skill package. A compatible AI can download it, detect `SKILL.md`, install the `photo-decode` Skill and use it immediately. Codex is one supported host, not a prerequisite.
+
+If your AI requires a file or folder upload instead of a repository URL, download the repository and add the repository root as one Skill.
+
+### Optional manual installation in Codex
 
 ```bash
 git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo-decode
@@ -68,7 +75,7 @@ git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo
 
 Start a new Codex session if the Skill does not appear immediately.
 
-## Use
+## Use after installation
 
 Upload an image and say:
 

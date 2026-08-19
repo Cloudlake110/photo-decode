@@ -2,6 +2,8 @@
 
 **一张图，解出另一种视觉。**
 
+Photo Decode 是一个用于视觉分析与结构化图像重构的可移植 Agent Skill。它采用 `SKILL.md` 格式；任何支持安装 Agent Skills 的 AI 环境都可以安装并使用，不要求必须使用 Codex。
+
 V2 是一次从零重写，不是给 v1 继续叠补丁。
 
 它重新把“解图”定义成：
@@ -43,7 +45,20 @@ V2 必须在一个完全新的窗口里，仅靠 Skill 本身就能稳定工作�
 
 该输出必须重做，并记录为冷启动回归失败。
 
-## 安装到 Codex
+## 安装并使用
+
+如果你的 AI 支持安装 Agent Skills，把下面这句话直接发给它：
+
+```text
+请从这个 GitHub 仓库安装并使用 Photo Decode / 解图：
+https://github.com/Cloudlake110/photo-decode
+```
+
+仓库根目录就是完整的 Skill 包。兼容的 AI 可以下载仓库、识别 `SKILL.md`、安装 `photo-decode`，然后立即使用。Codex 只是支持它的运行环境之一，不是前置条件。
+
+如果你的 AI 只支持上传文件或文件夹，请下载本仓库，并把仓库根目录作为一个完整 Skill 添加进去。
+
+### Codex 手动安装（可选）
 
 ```bash
 git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo-decode
@@ -51,7 +66,7 @@ git clone https://github.com/Cloudlake110/photo-decode.git ~/.codex/skills/photo
 
 如果 Skill 没有立即出现，请重新开启 Codex 会话。
 
-## 使用
+## 安装后使用
 
 上传图片后输入：
 

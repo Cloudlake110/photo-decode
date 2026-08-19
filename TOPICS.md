@@ -16,4 +16,4 @@ Add these repository topics in GitHub settings:
 
 Recommended short description:
 
-> Photo Decode 解图 — turn any image into a five-block editorial visual deconstruction with a background-free flat reinterpretation, derived palette and key elements.
+> Photo Decode 解图 — a portable Agent Skill that turns any image into a five-block editorial visual deconstruction with a background-free flat reinterpretation, derived palette and key elements.
